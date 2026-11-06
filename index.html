@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+...<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -115,9 +115,6 @@ font-style: italic;
 const MODELS = [
 { id: "openai/gpt-4o", name: "GPT-4o" },
 { id: "openai/gpt-4o-mini", name: "GPT-4o Mini" },
-{ id: "anthropic/claude-3.5-sonnet", name: "Claude 3.5 Sonnet" },
-{ id: "anthropic/claude-3-haiku", name: "Claude 3 Haiku" },
-{ id: "google/gemini-pro-1.5", name: "Gemini 1.5 Pro" },
 { id: "meta-llama/llama-3.1-70b-instruct", name: "Llama 3.1 70B" },
 { id: "mistralai/mistral-large", name: "Mistral Large" },
 { id: "qwen/qwen-2.5-72b-instruct", name: "Qwen 2.5 72B" }
@@ -166,6 +163,8 @@ results.appendChild(div);
 await Promise.all(checked.map(async (modelId) => {
 const div = document.getElementById("res-" + modelId.replace(/[\/\.]/g, "-"));
 try {
+
+
 const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
 method: "POST",
 headers: {
